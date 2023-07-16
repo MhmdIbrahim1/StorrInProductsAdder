@@ -1,0 +1,7 @@
+com.example.productsadder.test.app-androidTest-0 D:\StoreInReq\ProductsAdder-master\app\build\generated\res\resValues\androidTest\debug
+com.example.productsadder.test.app-androidTest-1 D:\StoreInReq\ProductsAdder-master\app\build\generated\res\rs\androidTest\debug
+com.example.productsadder.test.app-mergeDebugAndroidTestResources-2 D:\StoreInReq\ProductsAdder-master\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.example.productsadder.test.app-mergeDebugAndroidTestResources-3 D:\StoreInReq\ProductsAdder-master\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.example.productsadder.test.app-merged_res-4 D:\StoreInReq\ProductsAdder-master\app\build\intermediates\merged_res\debugAndroidTest
+com.example.productsadder.test.app-androidTest-5 D:\StoreInReq\ProductsAdder-master\app\src\androidTest\res
+com.example.productsadder.test.app-androidTestDebug-6 D:\StoreInReq\ProductsAdder-master\app\src\androidTestDebug\res
