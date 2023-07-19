@@ -3,6 +3,7 @@ package com.example.productsadder
 data class Product(
     val id: String,
     val name: String,
+    val lowercaseName: String,
     val category: String,
     val price: Float,
     val offerPercentage: Float? = null,

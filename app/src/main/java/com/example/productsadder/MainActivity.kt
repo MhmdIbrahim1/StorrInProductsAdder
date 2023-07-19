@@ -26,6 +26,7 @@ import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
+import java.util.Locale
 import java.util.UUID
 
 class MainActivity : AppCompatActivity() {
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        updateExistingProducts()
         binding.buttonColorPicker.setOnClickListener {
             ColorPickerDialog.Builder(this)
                 .setTitle("Product Color")
@@ -115,6 +117,7 @@ class MainActivity : AppCompatActivity() {
             val product = Product(
                 UUID.randomUUID().toString(),
                 name,
+                name.toLowerCase(Locale.ROOT),
                 category,
                 price.toFloat(),
                 if (offerPercentage.isEmpty()) null else offerPercentage.toFloat(),
@@ -221,5 +224,19 @@ class MainActivity : AppCompatActivity() {
         selectedColors.clear()
         updateImages()
         updateColors()
+    }
+
+    private fun updateExistingProducts() {
+        val productsRef = Firebase.firestore.collection("products")
+
+        productsRef.get().addOnSuccessListener { result ->
+            for (productDocument in result) {
+                val name = productDocument.getString("name")
+                if (name != null) {
+                    val lowercaseName = name.toLowerCase(Locale.ROOT)
+                    productDocument.reference.update("lowercaseName", lowercaseName)
+                }
+            }
+        }
     }
 }
